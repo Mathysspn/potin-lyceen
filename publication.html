@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Nouvelle publication - Potin Lycéen</title>
+
+    <link
+        rel="stylesheet"
+        href="./publication.css"
+    >
+
+</head>
+
+
+<body>
+
+<main class="page-publication">
+
+
+    <!-- EN-TÊTE -->
+
+    <header class="entete-publication">
+
+        <button
+            type="button"
+            class="bouton-fermer"
+            id="bouton-fermer"
+        >
+            ×
+        </button>
+
+        <h1>Nouvelle publication</h1>
+
+    </header>
+
+
+
+    <!-- DESCRIPTION -->
+
+    <section class="zone-description">
+
+        <textarea
+            id="texte-publication"
+            maxlength="500"
+            placeholder="Écrire une description..."
+        ></textarea>
+
+
+        <!-- BOUTON EMOJI -->
+
+        <button
+            type="button"
+            class="icone-description"
+            id="bouton-emoji"
+            aria-label="Ajouter un emoji"
+        >
+            ☺
+        </button>
+
+
+        <!-- MENU EMOJIS -->
+
+        <div
+            class="menu-emojis"
+            id="menu-emojis"
+        >
+
+            <button type="button">😀</button>
+            <button type="button">😂</button>
+            <button type="button">🤣</button>
+            <button type="button">😊</button>
+            <button type="button">😍</button>
+            <button type="button">🥰</button>
+            <button type="button">😘</button>
+
+            <button type="button">😎</button>
+            <button type="button">😭</button>
+            <button type="button">😡</button>
+            <button type="button">😱</button>
+            <button type="button">🤔</button>
+            <button type="button">🙄</button>
+            <button type="button">🤩</button>
+
+            <button type="button">🥳</button>
+            <button type="button">❤️</button>
+            <button type="button">💔</button>
+            <button type="button">💕</button>
+            <button type="button">🔥</button>
+            <button type="button">✨</button>
+            <button type="button">⭐</button>
+
+            <button type="button">🎉</button>
+            <button type="button">💀</button>
+            <button type="button">🤘</button>
+            <button type="button">🎸</button>
+            <button type="button">🎵</button>
+            <button type="button">🎶</button>
+            <button type="button">👀</button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- OPTIONS -->
+
+    <section class="options-publication">
+
+        <button
+            type="button"
+            class="option-publication"
+            id="bouton-photo"
+        >
+
+            <div class="icone-option photo">
+                ▣
+            </div>
+
+            <span>Photo</span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="option-publication"
+            id="bouton-video"
+        >
+
+            <div class="icone-option video">
+                ▷
+            </div>
+
+            <span>Vidéo</span>
+
+        </button>
+
+
+        <button
+            type="button"
+            class="option-publication"
+            id="bouton-hashtag"
+        >
+
+            <div class="icone-option hashtag">
+                #
+            </div>
+
+            <span>Hashtag</span>
+
+        </button>
+
+    </section>
+
+
+
+    <!-- PERSONNE -->
+
+    <button
+        type="button"
+        class="ligne-option"
+        id="bouton-personne"
+    >
+
+        <div class="icone-ligne">
+            ♙
+        </div>
+
+        <div class="texte-ligne">
+
+            <span>Ajouter une personne</span>
+
+            <small>(optionnel)</small>
+
+        </div>
+
+    </button>
+
+
+
+    <!-- CONFIDENTIALITÉ -->
+
+    <button
+        type="button"
+        class="ligne-option confidentialite"
+        id="bouton-confidentialite"
+    >
+
+        <div class="icone-ligne">
+            ◉
+        </div>
+
+        <div class="texte-ligne">
+
+            <strong>
+                Paramètres de confidentialité
+            </strong>
+
+            <span id="confidentialite-valeur">
+                Tout le monde
+            </span>
+
+        </div>
+
+        <div class="fleche">
+            ›
+        </div>
+
+    </button>
+
+
+
+    <!-- PUBLIER -->
+
+    <button
+        type="button"
+        class="bouton-publier"
+        id="bouton-publier"
+    >
+        Publier
+    </button>
+
+
+</main>
+
+
+<script src="./publication.js"></script>
+
+</body>
+
+</html>

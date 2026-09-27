@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Créer un compte - Potin Lycéen</title>
+
+    	<link rel="stylesheet" href="./inscription.css">
+</head>
+
+<body>
+
+    <main class="page-inscription">
+
+        <div class="contenu">
+
+            <!-- Bouton retour vers l'accueil -->
+            <a href="accueil.html" class="bouton-retour">
+                ←
+            </a>
+
+
+            <!-- ==============================
+                 CHOIX DU TYPE DE COMPTE
+            =============================== -->
+
+            <section id="choix-compte">
+
+                <h1>Créer un compte</h1>
+
+                <p class="description">
+                    Tu es...
+                </p>
+
+
+                <!-- ÉLÈVE -->
+
+                <button type="button"
+                        class="type-compte"
+                        data-type="eleve">
+
+                    <span class="icone-type">
+                        🎓
+                    </span>
+
+                    <span class="texte-type">
+
+                        <strong>
+                            Élève
+                        </strong>
+
+                        <small>
+                            Je suis élève dans le lycée
+                        </small>
+
+                    </span>
+
+                    <span class="fleche">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- PROFESSEUR -->
+
+                <button type="button"
+                        class="type-compte"
+                        data-type="professeur">
+
+                    <span class="icone-type">
+                        👨‍🏫
+                    </span>
+
+                    <span class="texte-type">
+
+                        <strong>
+                            Professeur
+                        </strong>
+
+                        <small>
+                            Je suis professeur dans le lycée
+                        </small>
+
+                    </span>
+
+                    <span class="fleche">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- PERSONNEL -->
+
+                <button type="button"
+                        class="type-compte"
+                        data-type="personnel">
+
+                    <span class="icone-type">
+                        🏫
+                    </span>
+
+                    <span class="texte-type">
+
+                        <strong>
+                            Personnel
+                        </strong>
+
+                        <small>
+                            CPE, surveillant, AESH, administration...
+                        </small>
+
+                    </span>
+
+                    <span class="fleche">
+                        →
+                    </span>
+
+                </button>
+
+            </section>
+
+
+
+            <!-- ==============================
+                 FORMULAIRE
+            =============================== -->
+
+            <form id="formulaire-compte" style="display: none;">
+
+                <!-- Type de compte choisi -->
+                <input type="hidden"
+                       id="typeCompte"
+                       name="typeCompte">
+
+
+
+                <!-- TITRE -->
+
+                <div class="titre-formulaire">
+
+                    <span>
+                        Créer ton compte
+                    </span>
+
+                    <small>
+                        Quelques informations pour commencer
+                    </small>
+
+                </div>
+
+
+
+                <!-- ==============================
+                     INFORMATIONS DE BASE
+                =============================== -->
+
+                <!-- PRÉNOM -->
+
+                <label for="prenom">
+                    Prénom
+                </label>
+
+                <input type="text"
+                       id="prenom"
+                       name="prenom"
+                       placeholder="Ton prénom"
+                       required>
+
+
+
+                <!-- NOM -->
+
+                <label for="nom">
+                    Nom
+                </label>
+
+                <input type="text"
+                       id="nom"
+                       name="nom"
+                       placeholder="Ton nom"
+                       required>
+
+
+
+                <!-- ==============================
+                     INFORMATIONS ÉLÈVE
+                =============================== -->
+
+                <div id="informations-eleve"
+                     style="display: none;">
+
+                    <!-- NIVEAU -->
+
+                    <label for="niveau">
+                        Niveau
+                    </label>
+
+                    <select id="niveau"
+                            name="niveau">
+
+                        <option value="">
+                            Choisir ton niveau
+                        </option>
+
+                        <option value="seconde">
+                            Seconde
+                        </option>
+
+                        <option value="premiere">
+                            Première
+                        </option>
+
+                        <option value="terminale">
+                            Terminale
+                        </option>
+
+                    </select>
+
+
+
+                    <!-- NUMÉRO DE CLASSE -->
+
+                    <label for="numeroClasse">
+                        Numéro de classe
+                    </label>
+
+                    <input type="number"
+                           id="numeroClasse"
+                           name="numeroClasse"
+                           min="1"
+                           placeholder="Ex : 3">
+
+                </div>
+
+
+
+                <!-- ==============================
+                     INFORMATIONS PROFESSEUR
+                =============================== -->
+
+                <div id="informations-professeur"
+                     style="display: none;">
+
+                    <!-- MATIÈRE -->
+
+                    <label for="matiere">
+                        Matière enseignée
+                    </label>
+
+                    <select id="matiere"
+                            name="matiere">
+
+                        <option value="">
+                            Choisir ta matière
+                        </option>
+
+                        <option value="francais">
+                            Français
+                        </option>
+
+                        <option value="maths">
+                            Mathématiques
+                        </option>
+
+                        <option value="histoire-geographie">
+                            Histoire-Géographie
+                        </option>
+
+                        <option value="anglais">
+                            Anglais
+                        </option>
+
+                        <option value="espagnol">
+                            Espagnol
+                        </option>
+
+                        <option value="allemand">
+                            Allemand
+                        </option>
+
+                        <option value="physique-chimie">
+                            Physique-Chimie
+                        </option>
+
+                        <option value="svt">
+                            SVT
+                        </option>
+
+                        <option value="ses">
+                            SES
+                        </option>
+
+                        <option value="eps">
+                            EPS
+                        </option>
+
+                        <option value="musique">
+                            Éducation musicale
+                        </option>
+
+                        <option value="arts">
+                            Arts plastiques
+                        </option>
+
+                        <option value="technologie">
+                            Technologie
+                        </option>
+
+                        <option value="autre">
+                            Autre
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- ==============================
+                     INFORMATIONS PERSONNEL
+                =============================== -->
+
+                <div id="informations-personnel"
+                     style="display: none;">
+
+                    <!-- FONCTION -->
+
+                    <label for="fonction">
+                        Fonction
+                    </label>
+
+                    <select id="fonction"
+                            name="fonction">
+
+                        <option value="">
+                            Choisir ta fonction
+                        </option>
+
+                        <option value="cpe">
+                            CPE
+                        </option>
+
+                        <option value="surveillant">
+                            Surveillant(e)
+                        </option>
+
+                        <option value="aesh">
+                            AESH
+                        </option>
+
+                        <option value="administration">
+                            Administration
+                        </option>
+
+                        <option value="vie-scolaire">
+                            Vie scolaire
+                        </option>
+
+                        <option value="autre">
+                            Autre
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- ==============================
+                     IDENTIFIANTS
+                =============================== -->
+
+                <!-- NOM D'UTILISATEUR -->
+
+                <label for="pseudo">
+                    Nom d'utilisateur
+                </label>
+
+                <input type="text"
+                       id="pseudo"
+                       name="pseudo"
+                       placeholder="@tonpseudo"
+                       required>
+
+
+
+                <!-- MOT DE PASSE -->
+
+                <label for="motdepasse">
+                    Mot de passe
+                </label>
+
+                <input type="password"
+                       id="motdepasse"
+                       name="motdepasse"
+                       placeholder="Crée ton mot de passe"
+                       required>
+
+
+
+                <!-- CONFIRMATION -->
+
+                <label for="confirmation">
+                    Confirmer le mot de passe
+                </label>
+
+                <input type="password"
+                       id="confirmation"
+                       name="confirmation"
+                       placeholder="Retape ton mot de passe"
+                       required>
+
+
+
+                <!-- ==============================
+                     CODE DU LYCÉE
+                =============================== -->
+
+                <label for="codeLycee">
+                    Code d'inscription du lycée
+                </label>
+
+                <input type="text"
+                       id="codeLycee"
+                       name="codeLycee"
+                       placeholder="Entre le code du lycée"
+                       required>
+
+
+
+                <!-- ==============================
+                     RÈGLEMENT
+                =============================== -->
+
+                <label class="case-reglement">
+
+                    <input type="checkbox"
+                           id="reglement"
+                           required>
+
+                    <span>
+                        J'accepte le règlement de Potin Lycéen.
+                    </span>
+
+                </label>
+
+
+
+                <!-- ==============================
+                     BOUTON CRÉATION
+                =============================== -->
+
+                <button type="submit"
+                        class="bouton-principal">
+
+                    Créer mon compte →
+
+                </button>
+
+            </form>
+
+
+
+            <!-- ==============================
+                 RETOUR AU CHOIX DU COMPTE
+            =============================== -->
+
+            <button type="button"
+                    id="retour"
+                    style="display: none;">
+
+                ← Changer de type de compte
+
+            </button>
+
+
+
+            <!-- ==============================
+                 CONNEXION
+            =============================== -->
+
+            <p class="connexion">
+
+                Tu as déjà un compte ?
+
+                <a href="connexion.html">
+                    Se connecter
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- SCRIPT EXISTANT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

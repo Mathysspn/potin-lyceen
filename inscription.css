@@ -1,0 +1,693 @@
+/* ==============================
+   RESET
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #080b18;
+    color: white;
+}
+
+
+/* ==============================
+   PAGE
+============================== */
+
+.page-inscription {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    padding: 18px;
+
+    overflow-x: hidden;
+
+    background-image: url("fond-lycee-vertical.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    color: white;
+}
+.page-inscription::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(4, 7, 20, 0.25);
+
+    z-index: 0;
+}
+
+.page-inscription > * {
+    position: relative;
+    z-index: 1;
+}
+/* ==============================
+   BOUTON RETOUR
+============================== */
+
+.bouton-retour {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    background: rgba(5, 8, 24, 0.35);
+
+    color: white;
+
+    font-size: 22px;
+    line-height: 1;
+
+    text-decoration: none;
+
+    z-index: 5;
+
+    backdrop-filter: blur(6px);
+}
+
+.bouton-retour:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ==============================
+   POSITION DU CONTENU
+============================== */
+
+.contenu {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    padding-top: 210px;
+}
+
+/* ==============================
+   CHOIX DU TYPE DE COMPTE
+============================== */
+#choix-compte {
+    width: 100%;
+    max-width: 390px;
+
+    margin: 0 auto;
+
+    padding: 24px;
+
+    background: rgba(5, 8, 24, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+
+    backdrop-filter: blur(10px);
+}
+
+#choix-compte h1 {
+    margin: 0 0 8px;
+
+    color: white;
+
+    font-size: 28px;
+}
+
+.description {
+    margin: 0 0 20px;
+
+    color: #c5c7d4;
+
+    font-size: 14px;
+}
+
+
+/* ==============================
+   BOUTONS DE TYPE
+============================== */
+
+.type-compte {
+    display: flex;
+
+    width: 100%;
+
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 12px;
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+
+    color: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.type-compte:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.icone-type {
+    flex-shrink: 0;
+
+    font-size: 22px;
+}
+
+.texte-type {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.texte-type strong {
+    font-size: 15px;
+}
+
+.texte-type small {
+    margin-top: 3px;
+
+    color: #bfc2d0;
+
+    font-size: 12px;
+}
+
+.fleche {
+    flex-shrink: 0;
+
+    font-size: 20px;
+}
+
+
+/* ==============================
+   FORMULAIRE
+============================== */
+
+#formulaire-compte {
+    display: none;
+
+    width: 100%;
+    max-width: 390px;
+
+    margin: 0 auto;
+
+    padding: 24px;
+
+    background: rgba(5, 8, 24, 0.90);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* Titre */
+
+.titre-formulaire {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 24px;
+}
+
+.titre-formulaire span {
+    color: white;
+
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.titre-formulaire small {
+    margin-top: 6px;
+
+    color: #bfc2d0;
+
+    font-size: 13px;
+}
+
+
+/* ==============================
+   CHAMPS
+============================== */
+
+/* IMPORTANT :
+   chaque label et chaque champ
+   prend toute la largeur */
+
+#formulaire-compte label:not(.case-reglement) {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 15px;
+    margin-bottom: 7px;
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#formulaire-compte input:not([type="checkbox"]),
+#formulaire-compte select {
+    display: block;
+
+    width: 100%;
+    height: 48px;
+
+    padding: 0 14px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+#formulaire-compte input:not([type="checkbox"]):focus,
+#formulaire-compte select:focus {
+    border-color: #d946ef;
+}
+
+#formulaire-compte input::placeholder {
+    color: #8f93a5;
+}
+
+
+/* Select */
+
+#formulaire-compte select {
+    appearance: auto;
+}
+
+
+/* ==============================
+   INFORMATIONS CONDITIONNELLES
+============================== */
+
+#informations-eleve,
+#informations-professeur,
+#informations-personnel {
+    width: 100%;
+}
+
+
+/* ==============================
+   RÈGLEMENT
+============================== */
+
+.case-reglement {
+    display: flex !important;
+
+    width: 100%;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    color: #c5c7d4;
+
+    font-size: 12px;
+    font-weight: normal !important;
+}
+
+.case-reglement input[type="checkbox"] {
+    flex-shrink: 0;
+
+    width: 17px;
+    height: 17px;
+
+    margin: 0;
+}
+
+
+/* ==============================
+   BOUTON PRINCIPAL
+============================== */
+
+.bouton-principal {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 22px;
+    padding: 14px;
+
+    background: linear-gradient(
+        90deg,
+        #b026d3,
+        #ed3bdc
+    );
+
+    border: none;
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* ==============================
+   RETOUR
+============================== */
+
+#retour {
+    display: block;
+
+    width: fit-content;
+
+    margin: 22px auto 0;
+
+    padding: 0;
+
+    background: none;
+    border: none;
+
+    color: #e13be8;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+/* ==============================
+   CONNEXION
+============================== */
+
+.connexion {
+    margin: 26px 0 10px;
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.connexion a {
+    color: #f044e8;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* ==============================
+   ORDINATEUR
+============================== */
+
+@media (min-width: 700px) {
+
+    .page-inscription {
+        width: 430px;
+
+        min-height: 100vh;
+
+        margin: 0 auto;
+
+        padding: 24px;
+    }
+
+    .entete {
+        margin-bottom: 150px;
+    }
+/* ==========================================
+   CORRECTION DU FORMULAIRE
+   ========================================== */
+
+/* Formulaire caché au démarrage */
+#formulaire-compte {
+    width: 100%;
+    max-width: 390px;
+}
+
+/* Quand JavaScript l'affiche */
+#formulaire-compte:not([style*="display: none"]) {
+    display: block !important;
+}
+
+/* Chaque élément du formulaire prend une ligne */
+
+#formulaire-compte > label:not(.case-reglement),
+#formulaire-compte > input:not([type="hidden"]),
+#formulaire-compte > select {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+}
+
+/* Les zones conditionnelles */
+
+#informations-eleve,
+#informations-professeur,
+#informations-personnel {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Le contenu de ces zones doit également être vertical */
+
+#informations-eleve label,
+#informations-eleve input,
+#informations-eleve select,
+#informations-professeur label,
+#informations-professeur input,
+#informations-professeur select,
+#informations-personnel label,
+#informations-personnel input,
+#informations-personnel select {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+}
+
+/* Taille normale des champs */
+
+#formulaire-compte input:not([type="checkbox"]),
+#formulaire-compte select {
+    height: 48px !important;
+    padding: 0 14px !important;
+
+    box-sizing: border-box !important;
+
+    border-radius: 12px !important;
+}
+
+/* Les labels */
+
+#formulaire-compte label:not(.case-reglement) {
+    margin-top: 15px !important;
+    margin-bottom: 7px !important;
+
+    font-size: 14px !important;
+    font-weight: bold !important;
+}
+
+/* Case du règlement */
+
+#formulaire-compte .case-reglement {
+    display: flex !important;
+    width: 100% !important;
+
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#formulaire-compte .case-reglement input {
+    width: 17px !important;
+    min-width: 17px !important;
+    max-width: 17px !important;
+}
+
+/* ==========================================
+   CHOIX DU TYPE DE COMPTE
+   ========================================== */
+
+#choix-compte {
+    display: block;
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+
+    padding: 24px;
+
+    background: rgba(5, 8, 24, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 22px;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* Titre */
+
+#choix-compte h1 {
+    margin: 0 0 8px;
+
+    color: white;
+
+    font-size: 28px;
+    line-height: 1.1;
+}
+
+
+/* "Tu es..." */
+
+#choix-compte .description {
+    margin: 0 0 20px;
+
+    color: #c5c7d4;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   BOUTONS ÉLÈVE / PROF / PERSONNEL
+   ========================================== */
+
+#choix-compte .type-compte {
+    display: flex !important;
+
+    width: 100% !important;
+    min-height: 64px;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0 0 12px;
+    padding: 14px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+
+    color: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+
+/* Icône */
+
+#choix-compte .icone-type {
+    display: flex;
+
+    flex-shrink: 0;
+
+    width: 28px;
+
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+
+/* Texte */
+
+#choix-compte .texte-type {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+#choix-compte .texte-type strong {
+    display: block;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+#choix-compte .texte-type small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #bfc2d0;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+}
+
+
+/* Flèche à droite */
+
+#choix-compte .fleche {
+    display: flex;
+
+    flex-shrink: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
+    font-size: 20px;
+}
+#choix-compte .type-compte {
+    margin-bottom: 20px;
+}
+}

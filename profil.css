@@ -1,0 +1,750 @@
+/* =========================
+   POTIN LYCÉEN
+   PROFIL
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #080d20;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/* =========================
+   PAGE
+   ========================= */
+
+.page-profil {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    background: #080d20;
+
+    padding-bottom: 88px;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   COUVERTURE
+   ========================= */
+
+.couverture {
+    position: relative;
+
+    width: 100%;
+    height: 210px;
+
+    overflow: hidden;
+}
+
+
+.couverture-fond {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(8, 13, 32, 0.05),
+            rgba(8, 13, 32, 0.35)
+        ),
+        url("./fond-lycee-vertical.png");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+.couverture::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(8, 13, 32, 0.05) 0%,
+            rgba(8, 13, 32, 0.05) 50%,
+            rgba(8, 13, 32, 0.85) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   BOUTONS DU HAUT
+   ========================= */
+
+.actions-profil {
+    position: absolute;
+
+    top: 16px;
+    left: 14px;
+    right: 14px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    z-index: 5;
+}
+
+
+.bouton-haut {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.16);
+
+    border-radius: 50%;
+
+    background: rgba(8, 13, 32, 0.45);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 25px;
+
+    backdrop-filter: blur(8px);
+}
+
+
+button.bouton-haut {
+    padding: 0;
+}
+
+
+/* =========================
+   INFORMATIONS DU PROFIL
+   ========================= */
+
+.infos-profil {
+    position: relative;
+
+    width: 100%;
+    max-width: 480px;
+
+    margin: 0 auto;
+
+    padding: 0 16px 20px;
+}
+
+
+/* =========================
+   AVATAR
+   ========================= */
+
+.avatar {
+    position: relative;
+
+    width: 108px;
+    height: 108px;
+
+    margin-top: -54px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid white;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #46506d 0,
+            #202943 42%,
+            #0d1328 100%
+        );
+
+    color: white;
+
+    font-size: 42px;
+
+    overflow: hidden;
+
+    z-index: 10;
+}
+
+
+#avatar-lettre {
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   BOUTON MODIFIER
+   ========================= */
+
+.bouton-modifier {
+    position: absolute;
+
+    top: 12px;
+    right: 16px;
+
+    min-width: 150px;
+    height: 44px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7652e8,
+            #8d5ff2
+        );
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+.bouton-modifier:active {
+    transform: scale(0.97);
+}
+
+
+/* =========================
+   NOM
+   ========================= */
+
+.infos-profil h1 {
+    margin: 12px 0 2px;
+
+    font-size: 25px;
+
+    line-height: 1.15;
+}
+
+
+/* =========================
+   PSEUDO
+   ========================= */
+
+.pseudo {
+    margin: 0;
+
+    color: #a8b0c8;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CLASSE
+   ========================= */
+
+.classe {
+    margin: 9px 0 0;
+
+    color: #d4d9e8;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   BIO
+   ========================= */
+
+.bio {
+    margin: 12px 0 0;
+
+    color: #eef0f8;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   STATISTIQUES
+   ========================= */
+
+.statistiques {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 24px;
+}
+
+
+.statistiques > div {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+    text-align: center;
+}
+
+
+.statistiques strong {
+    font-size: 18px;
+}
+
+
+.statistiques span {
+    color: #aeb6cd;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   ONGLETS
+   ========================= */
+
+.onglets {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+    max-width: 480px;
+
+    margin: 0 auto;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.onglet {
+    height: 58px;
+
+    border: none;
+
+    border-bottom:
+        2px solid transparent;
+
+    background: transparent;
+
+    color: #9ea8c2;
+
+    font-size: 26px;
+}
+
+
+.onglet.actif {
+    color: #9a6cff;
+
+    border-bottom-color: #9a6cff;
+}
+
+
+/* =========================
+   GALERIE DES PUBLICATIONS
+   ========================= */
+
+.galerie-publications {
+    width: 100%;
+    max-width: 480px;
+
+    margin: 0 auto;
+
+    padding: 8px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 5px;
+}
+
+
+/* =========================
+   PUBLICATION
+   ========================= */
+
+.publication-profil {
+    position: relative;
+
+    min-width: 0;
+
+    aspect-ratio: 1 / 1;
+
+    padding: 10px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 7px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #20294b,
+            #10162d
+        );
+
+    overflow: hidden;
+}
+
+
+/* Variations visuelles */
+
+.publication-profil:nth-child(3n + 2) {
+    background:
+        linear-gradient(
+            145deg,
+            #27365c,
+            #121b34
+        );
+}
+
+
+.publication-profil:nth-child(3n) {
+    background:
+        linear-gradient(
+            145deg,
+            #34295b,
+            #12162f
+        );
+}
+
+
+/* =========================
+   TEXTE PUBLICATION
+   ========================= */
+
+.publication-texte {
+    width: 100%;
+
+    color: white;
+
+    font-size: 12px;
+
+    line-height: 1.35;
+
+    display: -webkit-box;
+
+    -webkit-line-clamp: 7;
+
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   BOUTON SUPPRIMER
+   ========================= */
+
+.bouton-supprimer {
+    position: absolute;
+
+    right: 6px;
+    bottom: 6px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(8, 13, 32, 0.88);
+
+    color: white;
+
+    font-size: 16px;
+
+    z-index: 2;
+}
+
+
+.bouton-supprimer:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================
+   PROFIL SANS PUBLICATION
+   ========================= */
+
+.profil-vide {
+    display: none;
+
+    max-width: 480px;
+
+    margin: 35px auto 0;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+
+.profil-vide.visible {
+    display: block;
+}
+
+
+.icone-vide {
+    color: #8f98b2;
+
+    font-size: 42px;
+}
+
+
+.profil-vide h2 {
+    margin: 10px 0 6px;
+
+    font-size: 18px;
+}
+
+
+.profil-vide p {
+    margin: 0;
+
+    color: #8992aa;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   NAVIGATION BAS
+   ========================= */
+
+.navigation {
+    position: fixed;
+
+    left: 50%;
+    bottom: 0;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 480px;
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-around;
+
+    padding: 5px 8px;
+
+    background:
+        rgba(8, 13, 32, 0.97);
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    z-index: 100;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================
+   ÉLÉMENTS NAVIGATION
+   ========================= */
+
+.nav-item {
+    min-width: 50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 3px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #aab3ca;
+
+    text-decoration: none;
+}
+
+
+.nav-item span {
+    font-size: 23px;
+
+    line-height: 1;
+}
+
+
+.nav-item small {
+    font-size: 10px;
+}
+
+
+.nav-item.actif {
+    color: #a06cff;
+}
+
+
+/* =========================
+   BOUTON +
+   ========================= */
+
+.bouton-plus {
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+
+    margin-top: -20px;
+
+    border:
+        3px solid #0b1024;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7951e8,
+            #a06cff
+        );
+
+    color: white;
+
+    font-size: 31px;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   PETITS TÉLÉPHONES
+   ========================= */
+
+@media (max-width: 380px) {
+
+    .couverture {
+        height: 190px;
+    }
+
+
+    .avatar {
+        width: 96px;
+        height: 96px;
+
+        margin-top: -48px;
+    }
+
+
+    .bouton-modifier {
+        min-width: 135px;
+
+        height: 40px;
+
+        font-size: 13px;
+    }
+
+
+    .infos-profil h1 {
+        font-size: 23px;
+    }
+
+
+    .publication-texte {
+        font-size: 11px;
+    }
+
+}
+.bio {
+    cursor: pointer;
+}
+
+.bio:hover {
+    opacity: 0.8;
+}
+
+.champ-modification-bio {
+    display: block;
+    width: 90%;
+    max-width: 400px;
+    min-height: 70px;
+    margin: 10px auto;
+    padding: 10px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+
+    background: #11172d;
+    color: white;
+
+    font-family: inherit;
+    font-size: 14px;
+    text-align: center;
+
+    resize: vertical;
+    outline: none;
+}
+
+.champ-modification-bio:focus {
+    border-color: #8b5cf6;
+}

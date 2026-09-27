@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profil - Potin Lycéen</title>
+
+    <link rel="stylesheet" href="./profil.css">
+
+</head>
+
+
+<body>
+
+    <main class="page-profil">
+
+
+        <!-- =========================
+             COUVERTURE DU PROFIL
+             ========================= -->
+
+        <header class="couverture">
+
+            <div class="couverture-fond"></div>
+
+
+            <div class="actions-profil">
+
+                <a
+                    href="reseau.html"
+                    class="bouton-haut"
+                    aria-label="Retour au réseau">
+
+                    ←
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="bouton-haut"
+                    id="bouton-options"
+                    aria-label="Options">
+
+                    ⋯
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             INFORMATIONS DU PROFIL
+             ========================= -->
+
+        <section class="infos-profil">
+
+
+            <!-- AVATAR -->
+
+            <div class="avatar">
+
+                <span id="avatar-lettre">
+                    ?
+                </span>
+
+            </div>
+          
+            <!-- NOM -->
+
+            <h1 id="nom-profil">
+                Utilisateur
+            </h1>
+
+
+            <!-- PSEUDO -->
+
+            <p
+                class="pseudo"
+                id="pseudo-profil">
+
+                @utilisateur
+
+            </p>
+
+
+            <!-- CLASSE -->
+
+            <p
+                class="classe"
+                id="classe-profil">
+
+            </p>
+
+
+            <!-- BIO -->
+
+<p
+    class="bio"
+    id="bio-profil"
+    title="Double-clique pour modifier ta bio"
+>
+    Double clique pour modifier ta bio
+</p>
+
+
+
+            <!-- =========================
+                 STATISTIQUES
+                 ========================= -->
+
+            <div class="statistiques">
+
+
+                <div>
+
+                    <strong id="nombre-publications">
+                        0
+                    </strong>
+
+                    <span>
+                        Publications
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="nombre-abonnes">
+                        0
+                    </strong>
+
+                    <span>
+                        Abonnés
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="nombre-abonnements">
+                        0
+                    </strong>
+
+                    <span>
+                        Abonnements
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             ONGLETS
+             ========================= -->
+
+        <div class="onglets">
+
+
+            <button
+                type="button"
+                class="onglet actif"
+                id="onglet-publications">
+
+                ▦
+
+            </button>
+
+
+            <button
+                type="button"
+                class="onglet"
+                id="onglet-mentions">
+
+                ♙
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             GALERIE DES PUBLICATIONS
+             ========================= -->
+
+        <section
+            class="galerie-publications"
+            id="galerie-publications">
+
+            <!-- Les publications seront ajoutées par profil.js -->
+
+        </section>
+
+
+
+        <!-- =========================
+             AUCUNE PUBLICATION
+             ========================= -->
+
+        <section
+            class="profil-vide"
+            id="profil-vide">
+
+
+            <div class="icone-vide">
+                ▦
+            </div>
+
+
+            <h2>
+                Aucune publication
+            </h2>
+
+
+            <p>
+                Tes publications apparaîtront ici.
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             NAVIGATION BAS
+             ========================= -->
+
+        <nav class="navigation">
+
+
+            <!-- RÉSEAU -->
+
+            <a
+                href="reseau.html"
+                class="nav-item">
+
+                <span>
+                    ⌂
+                </span>
+
+                <small>
+                    Réseau
+                </small>
+
+            </a>
+
+
+
+            <!-- CRUSH -->
+
+            <button
+                type="button"
+                class="nav-item">
+
+                <span>
+                    ♡
+                </span>
+
+                <small>
+                    Crush
+                </small>
+
+            </button>
+
+
+
+            <!-- BOUTON + -->
+
+            <a
+                href="reseau.html"
+                class="nav-item bouton-plus">
+
+                <span>
+                    +
+                </span>
+
+            </a>
+
+
+
+            <!-- POTINS -->
+
+            <button
+                type="button"
+                class="nav-item">
+
+                <span>
+                    ◉
+                </span>
+
+                <small>
+                    Potins
+                </small>
+
+            </button>
+
+
+
+            <!-- PROFIL -->
+
+            <a
+                href="profil.html"
+                class="nav-item actif">
+
+                <span>
+                    ♙
+                </span>
+
+                <small>
+                    Profil
+                </small>
+
+            </a>
+
+
+        </nav>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./profil.js"></script>
+
+
+</body>
+
+</html>

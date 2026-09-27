@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Réseau - Potin Lycéen</title>
+
+    <link
+        rel="stylesheet"
+        href="./reseau.css"
+    >
+
+</head>
+
+
+<body>
+
+<main class="page-reseau">
+
+
+    <!-- =========================
+         BARRE DU HAUT
+         ========================= -->
+
+    <header class="barre-haut">
+
+        <div class="logo-reseau">
+            <span>POTIN</span>
+            <span>LYCÉEN</span>
+        </div>
+
+
+        <div class="actions-haut">
+
+            <button
+                type="button"
+                class="bouton-haut"
+                aria-label="Rechercher"
+            >
+                🔍
+            </button>
+
+
+            <button
+                type="button"
+                class="bouton-haut"
+                aria-label="Notifications"
+            >
+                ♡
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         CONTENU PRINCIPAL
+         ========================= -->
+
+    <section class="contenu-reseau">
+
+
+        <!-- =========================
+             STORIES
+             ========================= -->
+
+        <section class="stories">
+
+            <h2>Stories</h2>
+
+            <div class="liste-stories">
+
+                <!-- Les stories seront ajoutées ici plus tard -->
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             FIL D'ACTUALITÉ
+             ========================= -->
+
+        <section class="fil-actualite">
+
+            <div
+                id="liste-publications"
+                class="liste-publications"
+            >
+
+                <!-- Les publications seront ajoutées
+                     automatiquement avec reseau.js -->
+
+            </div>
+
+        </section>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         FENÊTRE NOUVELLE PUBLICATION
+         ========================= -->
+
+    <section
+        class="fenetre-publication"
+        id="fenetre-publication"
+    >
+
+        <div class="fond-fenetre"></div>
+
+
+        <div class="carte-publication">
+
+
+            <!-- En-tête -->
+
+            <div class="entete-publication">
+
+                <button
+                    type="button"
+                    class="bouton-fermer"
+                    id="fermer-publication"
+                    aria-label="Fermer"
+                >
+                    ×
+                </button>
+
+
+                <h2>
+                    Nouvelle publication
+                </h2>
+
+            </div>
+
+
+
+            <!-- Zone de texte -->
+
+            <textarea
+                id="texte-publication"
+                class="texte-publication"
+                placeholder="Quoi de neuf ?"
+                maxlength="500"
+            ></textarea>
+
+
+
+            <!-- Options -->
+
+            <div class="options-publication">
+
+
+                <button
+                    type="button"
+                    class="option-publication"
+                >
+                    <span>📷</span>
+                    <small>Photo</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="option-publication"
+                >
+                    <span>🎥</span>
+                    <small>Vidéo</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="option-publication"
+                >
+                    <span>#</span>
+                    <small>Hashtag</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="option-publication"
+                >
+                    <span>👤</span>
+                    <small>Ajouter une personne</small>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="option-publication"
+                >
+                    <span>🔒</span>
+                    <small>Confidentialité</small>
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Publier -->
+
+            <button
+                type="button"
+                class="bouton-publier"
+                id="bouton-publier"
+            >
+                Publier
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         NAVIGATION DU BAS
+         ========================= -->
+
+    <nav class="navigation">
+
+
+        <!-- Réseau -->
+
+        <a
+            href="./reseau.html"
+            class="nav-item actif"
+        >
+
+            <span>⌂</span>
+
+            <small>
+                Réseau
+            </small>
+
+        </a>
+
+
+
+        <!-- Crush -->
+
+        <button
+            type="button"
+            class="nav-item"
+        >
+
+            <span>♡</span>
+
+            <small>
+                Crush
+            </small>
+
+        </button>
+
+
+
+        <!-- Nouvelle publication -->
+
+        <button
+            type="button"
+            class="nav-item bouton-plus"
+            id="bouton-nouvelle-publication"
+        >
+
+            <span>+</span>
+
+        </button>
+
+
+
+        <!-- Potins -->
+
+        <button
+            type="button"
+            class="nav-item"
+        >
+
+            <span>◉</span>
+
+            <small>
+                Potins
+            </small>
+
+        </button>
+
+
+
+        <!-- Profil -->
+
+        <button
+            type="button"
+            class="nav-item"
+            id="bouton-profil"
+        >
+
+            <span>♙</span>
+
+            <small>
+                Profil
+            </small>
+
+        </button>
+
+
+    </nav>
+
+
+</main>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+     ========================= -->
+
+<script src="./reseau.js"></script>
+
+</body>
+
+</html>

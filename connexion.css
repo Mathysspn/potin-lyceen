@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050818;
+    color: white;
+}
+
+.page-connexion {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    background-image: url("./fond-lycee-vertical.png");
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    padding: 18px;
+    overflow-x: hidden;
+}
+
+.page-connexion::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(5, 8, 20, 0.25);
+
+    z-index: 0;
+}
+
+.contenu {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 390px;
+    margin: 0 auto;
+
+    padding-top: 210px;
+}
+
+/* Bouton retour */
+
+.bouton-retour {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 50%;
+
+    background: rgba(5,8,24,.35);
+
+    color: white;
+    font-size: 22px;
+    line-height: 1;
+
+    text-decoration: none;
+
+    z-index: 5;
+
+    backdrop-filter: blur(6px);
+}
+
+/* Bloc connexion */
+
+.connexion-box {
+    width: 100%;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(5, 8, 24, 0.78);
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    backdrop-filter: blur(10px);
+}
+
+/* Titres */
+
+.connexion-box h1 {
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+}
+
+.sous-titre {
+    text-align: center;
+
+    color: rgba(255,255,255,.7);
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+/* Formulaire */
+
+#formulaire-connexion {
+    width: 100%;
+}
+
+#formulaire-connexion label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+}
+
+#formulaire-connexion input {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 10px;
+
+    background: rgba(255,255,255,.08);
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+#formulaire-connexion input::placeholder {
+    color: rgba(255,255,255,.5);
+}
+
+#formulaire-connexion input:focus {
+    border-color: rgba(255,255,255,.5);
+}
+
+/* Bouton */
+
+.bouton-principal {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: white;
+    color: #050818;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.bouton-principal:hover {
+    opacity: 0.9;
+}
+
+/* Inscription */
+
+.inscription {
+    text-align: center;
+
+    margin-top: 22px;
+
+    font-size: 14px;
+
+    color: rgba(255,255,255,.7);
+}
+
+.inscription a {
+    color: white;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.inscription a:hover {
+    text-decoration: underline;
+}

@@ -828,3 +828,192 @@ input::placeholder {
         box-sizing: border-box;
     }
 }
+/* =========================================================
+   FORMULAIRE MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Le formulaire prend toute la largeur disponible */
+    #formulaire-compte {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 30px 24px;
+        box-sizing: border-box;
+
+        /* IMPORTANT :
+           on annule la grille du PC */
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    /* ==============================
+       TITRE
+       ============================== */
+
+    #formulaire-compte .titre-formulaire {
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    #formulaire-compte .titre-formulaire span {
+        font-size: 38px;
+        line-height: 1.05;
+    }
+
+    #formulaire-compte .titre-formulaire small {
+        margin-top: 14px;
+        font-size: 17px;
+        line-height: 1.3;
+    }
+
+
+    /* ==============================
+       LABELS
+       ============================== */
+
+    #formulaire-compte > label {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 12px;
+    }
+
+
+    /* ==============================
+       CHAMPS
+       ============================== */
+
+    #formulaire-compte > input,
+    #formulaire-compte > select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+
+        display: block;
+    }
+
+
+    /* ==============================
+       INFORMATIONS ÉLÈVE
+       ============================== */
+
+    #informations-eleve {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #informations-eleve label,
+    #informations-eleve input,
+    #informations-eleve select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* ==============================
+       INFORMATIONS PROFESSEUR
+       ============================== */
+
+    #informations-professeur {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #informations-professeur label,
+    #informations-professeur select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* ==============================
+       INFORMATIONS PERSONNEL
+       ============================== */
+
+    #informations-personnel {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #informations-personnel label,
+    #informations-personnel select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* ==============================
+       CASE DU RÈGLEMENT
+       ============================== */
+
+    #formulaire-compte .case-reglement {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        box-sizing: border-box;
+    }
+
+    #formulaire-compte .case-reglement input {
+        width: auto;
+        flex-shrink: 0;
+    }
+
+    #formulaire-compte .case-reglement span {
+        width: auto;
+        flex: 1;
+    }
+
+
+    /* ==============================
+       BOUTON
+       ============================== */
+
+    #formulaire-compte .bouton-principal {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-top: 15px;
+    }
+
+
+    /* ==============================
+       RETOUR
+       ============================== */
+
+    #retour {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 20px;
+    }
+}

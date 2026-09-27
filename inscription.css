@@ -765,3 +765,66 @@ input::placeholder {
     }
 
 }
+/* ==================================================
+   VERSION MOBILE - FORMULAIRE D'INSCRIPTION
+================================================== */
+
+@media (max-width: 700px) {
+
+    /* Carte du formulaire */
+    .formulaire,
+    .creation-compte,
+    .bloc-formulaire {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Contenu du formulaire */
+    .formulaire form,
+    .creation-compte form,
+    .bloc-formulaire form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    /* Ligne contenant plusieurs champs */
+    .formulaire .ligne,
+    .creation-compte .ligne,
+    .bloc-formulaire .ligne {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    /* Groupes des champs */
+    .formulaire .champ,
+    .creation-compte .champ,
+    .bloc-formulaire .champ {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Inputs */
+    .formulaire input,
+    .formulaire select,
+    .creation-compte input,
+    .creation-compte select,
+    .bloc-formulaire input,
+    .bloc-formulaire select {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Empêche les éléments de dépasser de la carte */
+    .formulaire *,
+    .creation-compte *,
+    .bloc-formulaire * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}

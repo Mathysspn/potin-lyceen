@@ -341,6 +341,10 @@ body {
 
     display: none;
 
+    flex-direction: column;
+
+    gap: 10px;
+
     width: 100%;
 
     max-width: 390px;
@@ -844,7 +848,7 @@ input::placeholder {
 
         /* IMPORTANT :
            on annule la grille du PC */
-        display: flex !important;
+        display: flex;
         flex-direction: column;
         gap: 10px;
     }

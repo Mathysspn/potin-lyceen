@@ -4,19 +4,23 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
 
 html,
 body {
-    margin: 0;
-    padding: 0;
     width: 100%;
     min-height: 100%;
-    font-family: Arial, sans-serif;
 }
 
+
 body {
+    font-family: Arial, sans-serif;
+
     background: #080b18;
+
     color: white;
 }
 
@@ -26,6 +30,7 @@ body {
 ============================== */
 
 .page-inscription {
+
     position: relative;
 
     width: 100%;
@@ -36,33 +41,76 @@ body {
 
     overflow-x: hidden;
 
-    background-image: url("fond-lycee-vertical.png");
+    background-image:
+        url("fond-lycee-vertical.png");
+
     background-size: cover;
+
     background-position: center top;
+
     background-repeat: no-repeat;
 
     color: white;
+
 }
+
+
+/* ==============================
+   VOILE SOMBRE
+============================== */
+
 .page-inscription::before {
+
     content: "";
 
     position: absolute;
+
     inset: 0;
 
-    background: rgba(4, 7, 20, 0.25);
+    background:
+        rgba(4, 7, 20, 0.25);
 
     z-index: 0;
+
 }
 
+
+/* ==============================
+   CONTENU
+============================== */
+
 .page-inscription > * {
+
     position: relative;
+
     z-index: 1;
+
 }
+
+
+.contenu {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    padding-top: 210px;
+
+}
+
+
 /* ==============================
    BOUTON RETOUR
 ============================== */
 
 .bouton-retour {
+
     position: absolute;
 
     top: 18px;
@@ -72,17 +120,22 @@ body {
     height: 42px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid
+        rgba(255, 255, 255, 0.25);
+
     border-radius: 50%;
 
-    background: rgba(5, 8, 24, 0.35);
+    background:
+        rgba(5, 8, 24, 0.35);
 
     color: white;
 
     font-size: 22px;
+
     line-height: 1;
 
     text-decoration: none;
@@ -90,80 +143,95 @@ body {
     z-index: 5;
 
     backdrop-filter: blur(6px);
+
 }
+
 
 .bouton-retour:hover {
-    background: rgba(255, 255, 255, 0.12);
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
 }
 
-
-/* ==============================
-   POSITION DU CONTENU
-============================== */
-
-.contenu {
-    position: relative;
-    z-index: 2;
-
-    width: 100%;
-
-    padding-top: 210px;
-}
 
 /* ==============================
    CHOIX DU TYPE DE COMPTE
 ============================== */
+
 #choix-compte {
+
     width: 100%;
+
     max-width: 390px;
 
     margin: 0 auto;
 
     padding: 24px;
 
-    background: rgba(5, 8, 24, 0.88);
+    background:
+        rgba(5, 8, 24, 0.88);
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
+
     border-radius: 22px;
 
     backdrop-filter: blur(10px);
+
 }
 
+
 #choix-compte h1 {
-    margin: 0 0 8px;
+
+    margin-bottom: 8px;
 
     color: white;
 
     font-size: 28px;
+
+    line-height: 1.1;
+
 }
 
+
 .description {
-    margin: 0 0 20px;
+
+    margin-bottom: 20px;
 
     color: #c5c7d4;
 
     font-size: 14px;
+
 }
 
 
 /* ==============================
-   BOUTONS DE TYPE
+   BOUTONS TYPE DE COMPTE
 ============================== */
 
 .type-compte {
+
     display: flex;
 
     width: 100%;
 
+    min-height: 64px;
+
     align-items: center;
+
     gap: 12px;
 
     margin-bottom: 12px;
-    padding: 15px;
 
-    background: rgba(255, 255, 255, 0.06);
+    padding: 14px;
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
+
     border-radius: 14px;
 
     color: white;
@@ -172,44 +240,96 @@ body {
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition:
+        background 0.2s,
+        transform 0.15s;
+
 }
+
 
 .type-compte:hover {
-    background: rgba(255, 255, 255, 0.1);
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
 }
+
+
+.type-compte:active {
+
+    transform: scale(0.98);
+
+}
+
 
 .icone-type {
+
+    display: flex;
+
     flex-shrink: 0;
 
-    font-size: 22px;
+    width: 28px;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 21px;
+
 }
 
+
 .texte-type {
+
     display: flex;
+
     flex-direction: column;
 
     flex: 1;
 
     min-width: 0;
+
 }
+
 
 .texte-type strong {
+
+    display: block;
+
+    color: white;
+
     font-size: 15px;
+
 }
 
+
 .texte-type small {
+
+    display: block;
+
     margin-top: 3px;
 
     color: #bfc2d0;
 
     font-size: 12px;
+
+    line-height: 1.3;
+
 }
 
+
 .fleche {
+
+    display: flex;
+
     flex-shrink: 0;
 
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+
     font-size: 20px;
+
 }
 
 
@@ -218,106 +338,162 @@ body {
 ============================== */
 
 #formulaire-compte {
+
     display: none;
 
     width: 100%;
+
     max-width: 390px;
 
     margin: 0 auto;
 
     padding: 24px;
 
-    background: rgba(5, 8, 24, 0.90);
+    background:
+        rgba(5, 8, 24, 0.90);
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid
+        rgba(255, 255, 255, 0.15);
+
     border-radius: 22px;
 
     backdrop-filter: blur(10px);
+
 }
 
 
-/* Titre */
+/* ==============================
+   TITRE
+============================== */
 
 .titre-formulaire {
+
     display: flex;
+
     flex-direction: column;
 
     margin-bottom: 24px;
+
 }
 
+
 .titre-formulaire span {
+
     color: white;
 
     font-size: 27px;
+
     font-weight: bold;
+
+    line-height: 1.15;
+
 }
 
+
 .titre-formulaire small {
+
     margin-top: 6px;
 
     color: #bfc2d0;
 
     font-size: 13px;
+
+    line-height: 1.3;
+
 }
 
 
 /* ==============================
-   CHAMPS
+   LABELS
 ============================== */
 
-/* IMPORTANT :
-   chaque label et chaque champ
-   prend toute la largeur */
+#formulaire-compte
+label:not(.case-reglement) {
 
-#formulaire-compte label:not(.case-reglement) {
     display: block;
 
     width: 100%;
 
     margin-top: 15px;
+
     margin-bottom: 7px;
 
     color: white;
 
     font-size: 14px;
+
     font-weight: bold;
+
 }
 
-#formulaire-compte input:not([type="checkbox"]),
-#formulaire-compte select {
+
+/* ==============================
+   INPUTS / SELECT
+============================== */
+
+#formulaire-compte
+input:not([type="checkbox"]),
+
+#formulaire-compte
+select {
+
     display: block;
 
     width: 100%;
+
+    min-width: 0;
+
     height: 48px;
 
-    padding: 0 14px;
+    padding:
+        0 14px;
 
-    background: rgba(255, 255, 255, 0.08);
+    background:
+        rgba(255, 255, 255, 0.08);
 
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid
+        rgba(255, 255, 255, 0.18);
+
     border-radius: 12px;
 
     color: white;
 
+    font-family: Arial, sans-serif;
+
     font-size: 14px;
 
     outline: none;
+
 }
 
-#formulaire-compte input:not([type="checkbox"]):focus,
-#formulaire-compte select:focus {
+
+#formulaire-compte
+input:not([type="checkbox"]):focus,
+
+#formulaire-compte
+select:focus {
+
     border-color: #d946ef;
+
 }
 
-#formulaire-compte input::placeholder {
+
+#formulaire-compte
+input::placeholder {
+
     color: #8f93a5;
+
 }
 
 
-/* Select */
+/* ==============================
+   SELECT
+============================== */
 
 #formulaire-compte select {
+
     appearance: auto;
+
 }
 
 
@@ -326,17 +502,49 @@ body {
 ============================== */
 
 #informations-eleve,
+
 #informations-professeur,
+
 #informations-personnel {
+
     width: 100%;
+
+}
+
+
+#informations-eleve label,
+
+#informations-eleve input,
+
+#informations-eleve select,
+
+#informations-professeur label,
+
+#informations-professeur input,
+
+#informations-professeur select,
+
+#informations-personnel label,
+
+#informations-personnel input,
+
+#informations-personnel select {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    min-width: 0;
+
 }
 
 
 /* ==============================
-   RÈGLEMENT
+   CASE RÈGLEMENT
 ============================== */
 
 .case-reglement {
+
     display: flex !important;
 
     width: 100%;
@@ -350,54 +558,78 @@ body {
     color: #c5c7d4;
 
     font-size: 12px;
+
     font-weight: normal !important;
+
+    line-height: 1.4;
+
 }
 
+
 .case-reglement input[type="checkbox"] {
+
     flex-shrink: 0;
 
-    width: 17px;
+    width: 17px !important;
+    min-width: 17px !important;
+    max-width: 17px !important;
+
     height: 17px;
 
     margin: 0;
+
 }
 
 
 /* ==============================
-   BOUTON PRINCIPAL
+   BOUTON CRÉER
 ============================== */
 
 .bouton-principal {
+
     display: block;
 
     width: 100%;
 
     margin-top: 22px;
+
     padding: 14px;
 
-    background: linear-gradient(
-        90deg,
-        #b026d3,
-        #ed3bdc
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #b026d3,
+            #ed3bdc
+        );
 
     border: none;
+
     border-radius: 12px;
 
     color: white;
 
     font-size: 15px;
+
     font-weight: bold;
 
     cursor: pointer;
+
+}
+
+
+.bouton-principal:active {
+
+    transform: scale(0.98);
+
 }
 
 
 /* ==============================
-   RETOUR
+   RETOUR AU CHOIX
 ============================== */
 
 #retour {
+
     display: block;
 
     width: fit-content;
@@ -407,6 +639,7 @@ body {
     padding: 0;
 
     background: none;
+
     border: none;
 
     color: #e13be8;
@@ -414,6 +647,7 @@ body {
     font-size: 14px;
 
     cursor: pointer;
+
 }
 
 
@@ -422,21 +656,88 @@ body {
 ============================== */
 
 .connexion {
-    margin: 26px 0 10px;
+
+    margin:
+        26px 0 10px;
 
     text-align: center;
 
     color: white;
 
     font-size: 14px;
+
 }
 
+
 .connexion a {
+
     color: #f044e8;
 
     font-weight: bold;
 
     text-decoration: none;
+
+}
+
+
+/* ==============================
+   PETITS TÉLÉPHONES
+============================== */
+
+@media (max-width: 380px) {
+
+    .page-inscription {
+
+        padding:
+            14px;
+
+    }
+
+
+    .contenu {
+
+        padding-top: 175px;
+
+    }
+
+
+    #choix-compte,
+
+    #formulaire-compte {
+
+        padding: 18px;
+
+        border-radius: 18px;
+
+    }
+
+
+    #choix-compte h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .titre-formulaire span {
+
+        font-size: 24px;
+
+    }
+
+
+    #formulaire-compte
+    input:not([type="checkbox"]),
+
+    #formulaire-compte
+    select {
+
+        height: 46px;
+
+        font-size: 13px;
+
+    }
+
 }
 
 
@@ -447,247 +748,20 @@ body {
 @media (min-width: 700px) {
 
     .page-inscription {
-        width: 430px;
 
-        min-height: 100vh;
+        width: 430px;
 
         margin: 0 auto;
 
         padding: 24px;
+
     }
 
-    .entete {
-        margin-bottom: 150px;
+
+    .contenu {
+
+        padding-top: 210px;
+
     }
-/* ==========================================
-   CORRECTION DU FORMULAIRE
-   ========================================== */
 
-/* Formulaire caché au démarrage */
-#formulaire-compte {
-    width: 100%;
-    max-width: 390px;
-}
-
-/* Quand JavaScript l'affiche */
-#formulaire-compte:not([style*="display: none"]) {
-    display: block !important;
-}
-
-/* Chaque élément du formulaire prend une ligne */
-
-#formulaire-compte > label:not(.case-reglement),
-#formulaire-compte > input:not([type="hidden"]),
-#formulaire-compte > select {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-}
-
-/* Les zones conditionnelles */
-
-#informations-eleve,
-#informations-professeur,
-#informations-personnel {
-    width: 100% !important;
-    max-width: 100% !important;
-}
-
-/* Le contenu de ces zones doit également être vertical */
-
-#informations-eleve label,
-#informations-eleve input,
-#informations-eleve select,
-#informations-professeur label,
-#informations-professeur input,
-#informations-professeur select,
-#informations-personnel label,
-#informations-personnel input,
-#informations-personnel select {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-}
-
-/* Taille normale des champs */
-
-#formulaire-compte input:not([type="checkbox"]),
-#formulaire-compte select {
-    height: 48px !important;
-    padding: 0 14px !important;
-
-    box-sizing: border-box !important;
-
-    border-radius: 12px !important;
-}
-
-/* Les labels */
-
-#formulaire-compte label:not(.case-reglement) {
-    margin-top: 15px !important;
-    margin-bottom: 7px !important;
-
-    font-size: 14px !important;
-    font-weight: bold !important;
-}
-
-/* Case du règlement */
-
-#formulaire-compte .case-reglement {
-    display: flex !important;
-    width: 100% !important;
-
-    align-items: flex-start;
-    gap: 10px;
-}
-
-#formulaire-compte .case-reglement input {
-    width: 17px !important;
-    min-width: 17px !important;
-    max-width: 17px !important;
-}
-
-/* ==========================================
-   CHOIX DU TYPE DE COMPTE
-   ========================================== */
-
-#choix-compte {
-    display: block;
-    width: 100%;
-    max-width: 390px;
-    margin: 0 auto;
-
-    padding: 24px;
-
-    background: rgba(5, 8, 24, 0.88);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 22px;
-
-    backdrop-filter: blur(10px);
-}
-
-
-/* Titre */
-
-#choix-compte h1 {
-    margin: 0 0 8px;
-
-    color: white;
-
-    font-size: 28px;
-    line-height: 1.1;
-}
-
-
-/* "Tu es..." */
-
-#choix-compte .description {
-    margin: 0 0 20px;
-
-    color: #c5c7d4;
-
-    font-size: 14px;
-}
-
-
-/* ==========================================
-   BOUTONS ÉLÈVE / PROF / PERSONNEL
-   ========================================== */
-
-#choix-compte .type-compte {
-    display: flex !important;
-
-    width: 100% !important;
-    min-height: 64px;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin: 0 0 12px;
-    padding: 14px;
-
-    background: rgba(255, 255, 255, 0.06);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
-
-    color: white;
-
-    text-align: left;
-
-    cursor: pointer;
-
-    box-sizing: border-box;
-}
-
-
-/* Icône */
-
-#choix-compte .icone-type {
-    display: flex;
-
-    flex-shrink: 0;
-
-    width: 28px;
-
-    justify-content: center;
-
-    font-size: 21px;
-}
-
-
-/* Texte */
-
-#choix-compte .texte-type {
-    display: flex;
-
-    flex-direction: column;
-
-    flex: 1;
-
-    min-width: 0;
-}
-
-#choix-compte .texte-type strong {
-    display: block;
-
-    color: white;
-
-    font-size: 15px;
-}
-
-#choix-compte .texte-type small {
-    display: block;
-
-    margin-top: 3px;
-
-    color: #bfc2d0;
-
-    font-size: 12px;
-
-    line-height: 1.3;
-}
-
-
-/* Flèche à droite */
-
-#choix-compte .fleche {
-    display: flex;
-
-    flex-shrink: 0;
-
-    align-items: center;
-    justify-content: center;
-
-    color: white;
-
-    font-size: 20px;
-}
-#choix-compte .type-compte {
-    margin-bottom: 20px;
-}
 }

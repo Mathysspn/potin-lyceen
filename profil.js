@@ -850,3 +850,16 @@ if (boutonNouvellePublication) {
         window.location.href = "./publication.html";
     };
 }
+
+/* =========================
+   BOUTON OPTIONS : PARAMÈTRES
+   ========================= */
+
+const boutonOptions =
+    document.getElementById("bouton-options");
+
+if (boutonOptions) {
+    boutonOptions.addEventListener("click", function () {
+        window.location.href = "./parametres.html";
+    });
+}

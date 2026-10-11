@@ -96,16 +96,18 @@ function afficherPublications() {
                 ? utilisateurConnecte.pseudo
                 : null);
 
-        const nomAffiche =
-            pseudo ||
-            publication.auteur ||
-            "Utilisateur";
+const nomAffiche =
+    publication.auteurPseudo ||
+    publication.auteur ||
+    "Utilisateur";
 
-        const photo =
-            estAuteurConnecte && utilisateurConnecte.photoProfil
-                ? utilisateurConnecte.photoProfil
-                : null;
-
+const photo =
+    publication.auteurPhoto ||
+    (
+        estAuteurConnecte
+            ? utilisateurConnecte.photoProfil
+            : ""
+    );
         /* En-tête de la publication */
 
         const entete = document.createElement("div");

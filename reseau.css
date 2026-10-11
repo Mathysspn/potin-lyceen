@@ -426,3 +426,128 @@ button {
     display: none !important;
     visibility: hidden !important;
 }
+
+
+/* ========================================
+   POTIN LYCÉEN — NAVIGATION HARMONISÉE
+   Même barre sur Réseau et Profil
+======================================== */
+
+.navigation {
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    min-height: 72px;
+    padding: 5px 8px calc(5px + env(safe-area-inset-bottom));
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2px;
+
+    background: rgba(6, 10, 24, 0.98);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+}
+
+.nav-item {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 82px;
+    height: 60px;
+    padding: 4px 1px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #8d94a9;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nav-item > span {
+    font-size: 22px;
+    line-height: 1.1;
+}
+
+.nav-item small {
+    font-size: 10px;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.nav-item.actif {
+    color: #c28cff;
+}
+
+/* Bouton + : apparence de Profil,
+   positionnement normal comme sur Réseau */
+
+.bouton-plus {
+    flex: 0 0 48px;
+    width: 48px;
+    min-width: 48px;
+    max-width: 48px;
+    height: 48px;
+
+    margin-top: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #0b1024;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #7951e8, #a06cff);
+    color: white;
+
+    font-size: 31px;
+    line-height: 1;
+    box-shadow: 0 0 18px rgba(173, 106, 255, 0.25);
+}
+
+.bouton-plus > span {
+    font-size: 32px;
+    line-height: 1;
+}
+
+/* Petits téléphones */
+
+@media (max-width: 380px) {
+    .navigation {
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+
+    .nav-item small {
+        font-size: 9px;
+    }
+}
+
+/* Ordinateur */
+
+@media (min-width: 700px) {
+    .navigation {
+        left: 50%;
+        right: auto;
+        width: min(500px, 100%);
+        transform: translateX(-50%);
+
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: none;
+        border-radius: 18px 18px 0 0;
+    }
+}

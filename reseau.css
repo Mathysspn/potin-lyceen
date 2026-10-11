@@ -1,3 +1,4 @@
+
 /* ========================================
    POTIN LYCÉEN — RÉSEAU
    Version PC et téléphone
@@ -31,6 +32,7 @@ input {
 
 button {
     -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
 }
 
 /* PAGE PRINCIPALE */
@@ -42,6 +44,7 @@ button {
     min-height: 100svh;
     padding-bottom: calc(88px + env(safe-area-inset-bottom));
     overflow-x: clip;
+
     background:
         radial-gradient(
             circle at top,
@@ -68,8 +71,9 @@ button {
     gap: 12px;
 
     background: rgba(3, 6, 17, 0.96);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
 
 .logo-reseau {
@@ -105,11 +109,10 @@ button {
     background: transparent;
     color: white;
     font-size: 23px;
-    cursor: pointer;
 }
 
 .bouton-haut:active {
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* CONTENU */
@@ -126,7 +129,7 @@ button {
 .stories {
     width: 100%;
     padding: 18px 0 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .stories h2 {
@@ -151,11 +154,13 @@ button {
 .story {
     flex: 0 0 auto;
     width: 63px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    color: rgba(255,255,255,0.85);
+
+    color: rgba(255, 255, 255, 0.85);
     font-size: 10px;
 }
 
@@ -174,7 +179,7 @@ button {
     min-width: 0;
 }
 
-/* MESSAGE SI LE FIL EST VIDE */
+/* FIL VIDE */
 
 .fil-vide {
     width: 100%;
@@ -208,8 +213,10 @@ button {
     width: 100%;
     min-width: 0;
     padding: 15px 14px;
+
     background: #090e1e;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
     overflow-wrap: anywhere;
 }
 
@@ -229,7 +236,7 @@ button {
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     background: #171e34;
     font-size: 17px;
@@ -262,95 +269,17 @@ button {
     word-break: normal;
 }
 
-/* ANCIENNE FENÊTRE DE PUBLICATION
-   Elle reste masquée : le bouton + ouvre publication.html. */
-
-#fenetre-publication {
-    display: none;
-}
-
-/* PETITS TÉLÉPHONES */
-
-@media (max-width: 380px) {
-    .barre-haut {
-        height: 62px;
-        padding: 0 12px;
-    }
-
-    .logo-reseau {
-        font-size: 16px;
-    }
-
-    .bouton-haut {
-        width: 34px;
-        height: 34px;
-        font-size: 21px;
-    }
-
-    .stories h2 {
-        font-size: 21px;
-    }
-
-    .fil-vide {
-        padding: 34px 12px;
-    }
-
-    .fil-vide h2 {
-        font-size: 17px;
-    }
-
-    .fil-vide p {
-        font-size: 13px;
-    }
-
-    .navigation {
-        padding-right: 4px;
-        padding-left: 4px;
-    }
-
-    .nav-item small {
-        font-size: 9px;
-    }
-
-/* ORDINATEUR */
-
-@media (min-width: 700px) {
-    body {
-        background: #01030a;
-    }
-
-    .page-reseau {
-        max-width: 700px;
-        margin: 0 auto;
-        border-right: 1px solid rgba(255,255,255,0.05);
-        border-left: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .navigation {
-        left: 50%;
-        right: auto;
-        width: min(500px, 100%);
-        transform: translateX(-50%);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-bottom: none;
-        border-radius: 18px 18px 0 0;
-    }
-}
-
-/* CORRECTION : masquer l'ancienne fenêtre de publication */
+/* MASQUER L'ANCIENNE FENÊTRE */
 
 #fenetre-publication {
     display: none !important;
     visibility: hidden !important;
 }
 
-
 /* ========================================
-   POTIN LYCÉEN — NAVIGATION DU BAS
-   Téléphone, petit téléphone et PC
+   NAVIGATION DU BAS
+   Commun à Réseau et Profil
 ======================================== */
-
-/* BARRE DE NAVIGATION */
 
 .navigation {
     position: fixed;
@@ -377,14 +306,11 @@ button {
     -webkit-backdrop-filter: blur(15px);
 }
 
-/* BOUTONS DE NAVIGATION */
-
 .nav-item {
     flex: 1 1 0;
     min-width: 0;
     max-width: 82px;
     height: 60px;
-
     padding: 4px 1px;
 
     display: flex;
@@ -400,28 +326,21 @@ button {
     color: #8d94a9;
 
     text-decoration: none;
-    font: inherit;
     cursor: pointer;
 
     -webkit-tap-highlight-color: transparent;
 }
-
-/* ICÔNES */
 
 .nav-item > span {
     font-size: 22px;
     line-height: 1.1;
 }
 
-/* TEXTES SOUS LES ICÔNES */
-
 .nav-item small {
     font-size: 10px;
     line-height: 1.2;
     white-space: nowrap;
 }
-
-/* BOUTON ACTIF */
 
 .nav-item.actif {
     color: #c28cff;
@@ -458,12 +377,7 @@ button {
     line-height: 1;
 
     box-shadow: 0 0 18px rgba(173, 106, 255, 0.25);
-
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
 }
-
-/* SYMBOLE + */
 
 .bouton-plus > span {
     font-size: 32px;
@@ -472,20 +386,47 @@ button {
 
 /* ========================================
    PETITS TÉLÉPHONES
-   Écrans de 380 px maximum
 ======================================== */
 
 @media (max-width: 380px) {
+    .barre-haut {
+        height: 62px;
+        padding: 0 12px;
+    }
+
+    .logo-reseau {
+        font-size: 16px;
+    }
+
+    .bouton-haut {
+        width: 34px;
+        height: 34px;
+        font-size: 21px;
+    }
+
+    .stories h2 {
+        font-size: 21px;
+    }
+
+    .fil-vide {
+        padding: 34px 12px;
+    }
+
+    .fil-vide h2 {
+        font-size: 17px;
+    }
+
+    .fil-vide p {
+        font-size: 13px;
+    }
 
     .navigation {
-        height: 72px;
         padding-right: 4px;
         padding-left: 4px;
         gap: 1px;
     }
 
     .nav-item {
-        height: 60px;
         padding-right: 0;
         padding-left: 0;
         gap: 4px;
@@ -509,27 +450,31 @@ button {
 }
 
 /* ========================================
-   PC
-   Écrans de 700 px minimum
+   ORDINATEUR
 ======================================== */
 
 @media (min-width: 700px) {
+    body {
+        background: #01030a;
+    }
+
+    .page-reseau {
+        max-width: 700px;
+        margin: 0 auto;
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+        border-left: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
     .navigation {
         left: 50%;
         right: auto;
-        bottom: 0;
-
         width: min(500px, 100%);
         height: 72px;
 
         transform: translateX(-50%);
 
-        padding: 5px 8px;
-
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-bottom: none;
-
         border-radius: 18px 18px 0 0;
     }
 

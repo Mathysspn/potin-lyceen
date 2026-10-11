@@ -65,13 +65,34 @@
 
             <!-- AVATAR -->
 
-            <div class="avatar">
+           
+<div class="avatar" id="avatar-profil">
 
-                <span id="avatar-lettre">
-                    ?
-                </span>
+    <img
+        id="photo-profil"
+        alt="Photo de profil"
+        hidden
+    >
 
-            </div>
+    <span id="avatar-lettre">?</span>
+
+    <button
+        type="button"
+        id="bouton-photo-profil"
+        aria-label="Changer la photo de profil"
+        title="Changer la photo de profil">
+        📷
+    </button>
+
+    <input
+        type="file"
+        id="fichier-photo-profil"
+        accept="image/*"
+        hidden
+    >
+
+</div>
+
           
             <!-- NOM -->
 

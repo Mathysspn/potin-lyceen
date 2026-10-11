@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -16,10 +15,8 @@
     <main class="page-parametres">
 
         <header class="entete-parametres">
-            <a href="./profil.html" class="bouton-retour" aria-label="Retour au profil">
-                ←
-            </a>
-
+            <a href="./profil.html" class="bouton-retour"
+               aria-label="Retour au profil">←</a>
             <h1>Paramètres</h1>
         </header>
 
@@ -27,31 +24,83 @@
 
             <h2>Mon compte</h2>
 
-            <button
-                type="button"
-                class="option-parametre"
-                id="bouton-changer-photo">
+            <button type="button"
+                    class="option-parametre"
+                    id="bouton-changer-photo">
 
                 <span class="icone-parametre">📷</span>
 
                 <span class="texte-parametre">
                     <strong>Photo de profil</strong>
-                    <small>Choisir une photo dans ta galerie</small>
+                    <small>Choisir et recadrer une photo</small>
                 </span>
 
                 <span class="fleche-parametre">›</span>
-
             </button>
 
-            <input
-                type="file"
-                id="fichier-photo-profil"
-                accept="image/*"
-                hidden>
+            <input type="file"
+                   id="fichier-photo-profil"
+                   accept="image/*"
+                   hidden>
 
         </section>
 
     </main>
+
+    <!-- FENÊTRE DE RECADRAGE -->
+
+    <div class="fenetre-recadrage"
+         id="fenetre-recadrage"
+         hidden>
+
+        <section class="boite-recadrage"
+                 role="dialog"
+                 aria-modal="true"
+                 aria-labelledby="titre-recadrage">
+
+            <h2 id="titre-recadrage">Recadrer la photo</h2>
+
+            <p class="aide-recadrage">
+                Déplace la photo pour choisir la zone à afficher.
+            </p>
+
+            <div class="zone-recadrage">
+                <canvas id="canvas-recadrage"
+                        width="320"
+                        height="320"
+                        aria-label="Zone de recadrage de la photo"></canvas>
+            </div>
+
+            <label for="zoom-photo" class="label-zoom">
+                Zoom
+            </label>
+
+            <input type="range"
+                   id="zoom-photo"
+                   min="1"
+                   max="3"
+                   step="0.01"
+                   value="1">
+
+            <div class="actions-recadrage">
+
+                <button type="button"
+                        id="annuler-recadrage"
+                        class="bouton-annuler">
+                    Annuler
+                </button>
+
+                <button type="button"
+                        id="valider-recadrage"
+                        class="bouton-valider">
+                    Valider
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
 
     <script src="./parametres.js"></script>
 

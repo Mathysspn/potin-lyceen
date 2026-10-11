@@ -748,3 +748,35 @@ button.bouton-haut {
 .champ-modification-bio:focus {
     border-color: #8b5cf6;
 }
+
+
+/* ALIGNEMENT DE LA NAVIGATION SUR PROFIL */
+
+.navigation {
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    transform: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2px;
+}
+
+.nav-item {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 82px;
+}
+
+.bouton-plus {
+    flex: 0 0 48px;
+    width: 48px;
+    min-width: 48px;
+    max-width: 48px;
+
+    height: 48px;
+    margin-top: 0;
+}

@@ -238,26 +238,31 @@ boutonPublier.addEventListener(
             ) || [];
 
 
-        const publication = {
+const publication = {
 
-            id: Date.now(),
+    id: Date.now(),
 
-            texte: texte,
+    texte: texte,
 
-            auteur:
-                (
-                    (utilisateur.prenom || "") +
-                    " " +
-                    (utilisateur.nom || "")
-                ).trim(),
+    auteur:
+        utilisateur.pseudo ||
+        (
+            (utilisateur.prenom || "") +
+            " " +
+            (utilisateur.nom || "")
+        ).trim(),
 
-            auteurPseudo:
-                utilisateur.pseudo,
+    auteurPseudo:
+        utilisateur.pseudo || "utilisateur",
 
-            date:
-                new Date().toISOString()
+    auteurPhoto:
+        utilisateur.photoProfil || "",
 
-        };
+    date:
+        new Date().toISOString()
+
+};
+
 
 
         publications.unshift(

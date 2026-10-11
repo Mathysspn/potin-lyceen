@@ -158,12 +158,36 @@ function afficherProfil() {
        AVATAR
        ========================= */
 
-    const premiereLettre =
-        (prenom || nom || "U").charAt(0);
 
+const premiereLettre =
+    (prenom || nom || "U").charAt(0);
 
-    avatarLettre.textContent =
-        premiereLettre.toUpperCase();
+avatarLettre.textContent =
+    premiereLettre.toUpperCase();
+
+/* Afficher la photo de profil si elle existe */
+
+const photoProfil =
+    document.getElementById("photo-profil");
+
+if (photoProfil) {
+
+    if (utilisateur.photoProfil) {
+
+        photoProfil.src = utilisateur.photoProfil;
+        photoProfil.hidden = false;
+        avatarLettre.style.display = "none";
+
+    } else {
+
+        photoProfil.removeAttribute("src");
+        photoProfil.hidden = true;
+        avatarLettre.style.display = "";
+
+    }
+
+}
+
 
 
     /* =========================

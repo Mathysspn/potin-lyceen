@@ -1,0 +1,135 @@
+
+/* =========================
+   POTIN LYCÉEN
+   PARAMÈTRES
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #030611;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #030611;
+    color: white;
+}
+
+.page-parametres {
+    width: 100%;
+    max-width: 600px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 24px 18px 100px;
+    background: #080d20;
+}
+
+.entete-parametres {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #202943;
+}
+
+.bouton-retour {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #151d35;
+    color: white;
+    font-size: 27px;
+    text-decoration: none;
+}
+
+.entete-parametres h1 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.section-parametres {
+    margin-top: 30px;
+}
+
+.section-parametres h2 {
+    margin-bottom: 16px;
+    color: #aeb8d3;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.option-parametre {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 17px 14px;
+    border: 1px solid #202943;
+    border-radius: 14px;
+    background: #10182e;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+}
+
+.option-parametre:active {
+    background: #192442;
+}
+
+.icone-parametre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #242044;
+    font-size: 22px;
+}
+
+.texte-parametre {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.texte-parametre strong {
+    font-size: 15px;
+}
+
+.texte-parametre small {
+    color: #aeb8d3;
+    font-size: 12px;
+}
+
+.fleche-parametre {
+    color: #aeb8d3;
+    font-size: 27px;
+}
+
+@media (max-width: 380px) {
+    .page-parametres {
+        padding: 20px 12px 90px;
+    }
+
+    .entete-parametres h1 {
+        font-size: 22px;
+    }
+
+    .option-parametre {
+        gap: 10px;
+        padding: 14px 10px;
+    }
+}

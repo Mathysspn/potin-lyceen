@@ -97,14 +97,13 @@ function afficherProfil() {
     /* Nom */
 
     nomProfil.textContent =
-        nomComplet || "Utilisateur";
+        utilisateur.pseudo || "Utilisateur";
 
 
     /* Pseudo */
 
     pseudoProfil.textContent =
-        "@" +
-        (utilisateur.pseudo || "utilisateur");
+        nomComplet || "utilisateur";
 
 
     /* =========================

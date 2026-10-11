@@ -1,64 +1,33 @@
+
 /* =========================
    POTIN LYCÉEN
    RÉSEAU
    ========================= */
 
-
-/* =========================
-   ÉLÉMENTS DE LA PAGE
-   ========================= */
+/* ÉLÉMENTS DE LA PAGE */
 
 const boutonNouvellePublication =
-    document.getElementById(
-        "bouton-nouvelle-publication"
-    );
+    document.getElementById("bouton-nouvelle-publication");
 
 const filActualite =
-    document.querySelector(
-        ".fil-actualite"
-    );
+    document.querySelector(".fil-actualite");
 
 const boutonProfil =
-    document.getElementById(
-        "bouton-profil"
-    );
+    document.getElementById("bouton-profil");
 
 
-/* =========================
-   NOUVELLE PUBLICATION
-   ========================= */
+/* NAVIGATION */
 
 if (boutonNouvellePublication) {
-
-    boutonNouvellePublication.addEventListener(
-        "click",
-        function() {
-
-            window.location.href =
-                "./publication.html";
-
-        }
-    );
-
+    boutonNouvellePublication.addEventListener("click", function () {
+        window.location.href = "./publication.html";
+    });
 }
 
-
-/* =========================
-   ACCÈS AU PROFIL
-   ========================= */
-
 if (boutonProfil) {
-
-    boutonProfil.addEventListener(
-        "click",
-        function() {
-
-            window.location.href =
-                "./profil.html";
-
-        }
-    );
-
+    boutonProfil.addEventListener("click", function () {
+        window.location.href = "./profil.html";
+    });
 }
 
 
@@ -67,312 +36,156 @@ if (boutonProfil) {
    ========================= */
 
 function afficherPublications() {
+    if (!filActualite) return;
 
     const publications =
         JSON.parse(
-            localStorage.getItem(
-                "potinLyceenPublications"
-            )
+            localStorage.getItem("potinLyceenPublications")
         ) || [];
 
-
-    if (!filActualite) {
-
-        return;
-
-    }
-
-
-    filActualite.innerHTML =
-        "";
-
-
-    /* =========================
-       AUCUNE PUBLICATION
-       ========================= */
-
-    if (publications.length === 0) {
-
-        filActualite.innerHTML = `
-
-            <div class="fil-vide">
-
-                <div class="icone-vide">
-                    💬
-                </div>
-
-                <h2>
-                    Aucun potin pour le moment
-                </h2>
-
-                <p>
-                    Les publications apparaîtront ici.
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    /* =========================
-       UTILISATEUR CONNECTÉ
-       ========================= */
-
-    const utilisateur =
+    const utilisateurConnecte =
         JSON.parse(
-            localStorage.getItem(
-                "potinLyceenUtilisateur"
-            )
+            localStorage.getItem("potinLyceenUtilisateur")
         );
 
+    filActualite.innerHTML = "";
 
-    const pseudoUtilisateur =
-        utilisateur
-            ? utilisateur.pseudo
-            : null;
+    if (publications.length === 0) {
+        filActualite.innerHTML = `
+            <div class="fil-vide">
+                <div class="icone-vide">💬</div>
+                <h2>Aucun potin pour le moment</h2>
+                <p>Les publications apparaîtront ici.</p>
+            </div>
+        `;
+        return;
+    }
 
+    publications.forEach(function (publication) {
+        const article = document.createElement("article");
+        article.className = "vraie-publication";
 
-    /* =========================
-       AFFICHAGE
-       ========================= */
+        /*
+         * Retrouver les informations de l'auteur.
+         * Pour l'instant, localStorage ne contient
+         * que le compte enregistré sur cet appareil.
+         */
 
-    publications.forEach(
-        function(publication) {
-
-            const article =
-                document.createElement(
-                    "article"
-                );
-
-
-            article.className =
-                "vraie-publication";
-
-
-            /* =========================
-               INFORMATIONS AUTEUR
-               ========================= */
-
-            const nomComplet =
-                utilisateur
-                    ? (
-                        (utilisateur.prenom || "") +
-                        " " +
-                        (utilisateur.nom || "")
-                    ).trim()
-                    : "";
-
-
-            /*
-             * Cette vérification est conservée
-             * pour permettre d'ajouter plus tard
-             * des fonctionnalités propres à
-             * l'auteur de la publication.
-             */
-
-            const estMaPublication =
+        const estAuteurConnecte =
+            utilisateurConnecte &&
+            (
                 (
                     publication.auteurPseudo &&
                     publication.auteurPseudo ===
-                    pseudoUtilisateur
-                )
-                ||
+                        utilisateurConnecte.pseudo
+                ) ||
                 (
                     !publication.auteurPseudo &&
                     publication.auteur ===
-                    nomComplet
-                );
-
-
-            article.innerHTML = `
-
-                <div class="vraie-publication-entete">
-
-                    <div class="vraie-publication-avatar">
-                        👤
-                    </div>
-
-
-                    <div class="vraie-publication-nom">
-
-                        <strong>
-                            ${echapperHTML(
-                                publication.auteur
-                            )}
-                        </strong>
-
-                        <small>
-                            ${afficherDate(
-                                publication.date
-                            )}
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="vraie-publication-texte">
-
-                    ${echapperHTML(
-                        publication.texte
-                    )}
-
-                </div>
-
-            `;
-
-
-            filActualite.appendChild(
-                article
+                        (
+                            (utilisateurConnecte.prenom || "") +
+                            " " +
+                            (utilisateurConnecte.nom || "")
+                        ).trim()
+                )
             );
 
-        }
-    );
+        const pseudo =
+            publication.auteurPseudo ||
+            (estAuteurConnecte
+                ? utilisateurConnecte.pseudo
+                : null);
 
+        const nomAffiche =
+            pseudo ||
+            publication.auteur ||
+            "Utilisateur";
+
+        const photo =
+            estAuteurConnecte && utilisateurConnecte.photoProfil
+                ? utilisateurConnecte.photoProfil
+                : null;
+
+        /* En-tête de la publication */
+
+        const entete = document.createElement("div");
+        entete.className = "vraie-publication-entete";
+
+        const avatar = document.createElement("div");
+        avatar.className = "vraie-publication-avatar";
+
+        if (photo) {
+            const image = document.createElement("img");
+            image.src = photo;
+            image.alt = "Photo de profil de " + nomAffiche;
+            image.className = "photo-auteur-publication";
+            avatar.appendChild(image);
+        } else {
+            avatar.textContent =
+                (nomAffiche.charAt(0) || "U").toUpperCase();
+        }
+
+        const blocNom = document.createElement("div");
+        blocNom.className = "vraie-publication-nom";
+
+        const nom = document.createElement("strong");
+        nom.textContent = nomAffiche;
+
+        const date = document.createElement("small");
+        date.textContent = afficherDate(publication.date);
+
+        blocNom.appendChild(nom);
+        blocNom.appendChild(date);
+
+        entete.appendChild(avatar);
+        entete.appendChild(blocNom);
+
+        const texte = document.createElement("div");
+        texte.className = "vraie-publication-texte";
+        texte.textContent = publication.texte || "";
+
+        article.appendChild(entete);
+        article.appendChild(texte);
+
+        filActualite.appendChild(article);
+    });
 }
 
 
-/* =========================
-   AFFICHER LA DATE
-   ========================= */
+/* AFFICHER LA DATE */
 
 function afficherDate(date) {
+    if (!date) return "Maintenant";
 
-    if (!date) {
+    const datePublication = new Date(date);
 
+    if (Number.isNaN(datePublication.getTime())) {
         return "Maintenant";
-
     }
 
-
-    const datePublication =
-        new Date(date);
-
-
-    if (
-        Number.isNaN(
-            datePublication.getTime()
-        )
-    ) {
-
-        return "Maintenant";
-
-    }
-
-
-    const maintenant =
-        new Date();
-
-
-    const difference =
-        maintenant -
-        datePublication;
-
-
-    const secondes =
-        Math.floor(
-            difference / 1000
-        );
-
-
-    if (secondes < 60) {
-
-        return "À l'instant";
-
-    }
-
-
-    const minutes =
-        Math.floor(
-            secondes / 60
-        );
-
-
-    if (minutes < 60) {
-
-        return (
-            "Il y a " +
-            minutes +
-            " min"
-        );
-
-    }
-
-
-    const heures =
-        Math.floor(
-            minutes / 60
-        );
-
-
-    if (heures < 24) {
-
-        return (
-            "Il y a " +
-            heures +
-            " h"
-        );
-
-    }
-
-
-    const jours =
-        Math.floor(
-            heures / 24
-        );
-
-
-    if (jours < 7) {
-
-        return (
-            "Il y a " +
-            jours +
-            " j"
-        );
-
-    }
-
-
-    return datePublication.toLocaleDateString(
-        "fr-FR",
-        {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric"
-        }
+    const secondes = Math.floor(
+        (new Date() - datePublication) / 1000
     );
 
+    if (secondes < 60) return "À l'instant";
+
+    const minutes = Math.floor(secondes / 60);
+    if (minutes < 60) return "Il y a " + minutes + " min";
+
+    const heures = Math.floor(minutes / 60);
+    if (heures < 24) return "Il y a " + heures + " h";
+
+    const jours = Math.floor(heures / 24);
+    if (jours < 7) return "Il y a " + jours + " j";
+
+    return datePublication.toLocaleDateString("fr-FR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric"
+    });
 }
 
 
-/* =========================
-   PROTECTION DU TEXTE
-   ========================= */
-
-function echapperHTML(texte) {
-
-    const div =
-        document.createElement(
-            "div"
-        );
-
-
-    div.textContent =
-        texte || "";
-
-
-    return div.innerHTML;
-
-}
-
-
-/* =========================
-   CHARGEMENT DE LA PAGE
-   ========================= */
+/* CHARGEMENT */
 
 afficherPublications();

@@ -859,3 +859,34 @@ button.bouton-haut {
         max-width: 82px;
     }
 }
+
+/* =========================
+   PHOTO DE PROFIL CENTRÉE
+   ========================= */
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar #photo-profil {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    transform: none;
+}
+
+.avatar #photo-profil[hidden] {
+    display: none !important;
+}
+
+.avatar #avatar-lettre {
+    position: relative;
+    z-index: 1;
+}

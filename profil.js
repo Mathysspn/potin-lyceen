@@ -837,3 +837,16 @@ function echapperHTML(texte) {
     return div.innerHTML;
 
 }
+
+/* BOUTON + : OUVRIR LA CRÉATION DE PUBLICATION */
+
+const boutonNouvellePublication =
+    document.getElementById("bouton-nouvelle-publication");
+
+if (boutonNouvellePublication) {
+    boutonNouvellePublication.onclick = function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.href = "./publication.html";
+    };
+}

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Paramètres - Potin Lycéen</title>
+
+    <link rel="stylesheet" href="./parametres.css">
+</head>
+
+<body>
+
+    <main class="page-parametres">
+
+        <header class="entete-parametres">
+            <a href="./profil.html" class="bouton-retour" aria-label="Retour au profil">
+                ←
+            </a>
+
+            <h1>Paramètres</h1>
+        </header>
+
+        <section class="section-parametres">
+
+            <h2>Mon compte</h2>
+
+            <button
+                type="button"
+                class="option-parametre"
+                id="bouton-changer-photo">
+
+                <span class="icone-parametre">📷</span>
+
+                <span class="texte-parametre">
+                    <strong>Photo de profil</strong>
+                    <small>Choisir une photo dans ta galerie</small>
+                </span>
+
+                <span class="fleche-parametre">›</span>
+
+            </button>
+
+            <input
+                type="file"
+                id="fichier-photo-profil"
+                accept="image/*"
+                hidden>
+
+        </section>
+
+    </main>
+
+    <script src="./parametres.js"></script>
+
+</body>
+</html>

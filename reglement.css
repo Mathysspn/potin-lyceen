@@ -1,0 +1,286 @@
+
+/* ==============================
+   POTIN LYCÉEN — RÈGLEMENT
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: dark;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at top, rgba(111, 67, 210, 0.13), transparent 48%),
+        #080d20;
+    color: #f3f4ff;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+.page-reglement {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 28px 22px 45px;
+}
+
+/* EN-TÊTE */
+
+.entete-reglement {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.bouton-retour {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.bouton-retour:hover {
+    background: rgba(160, 108, 255, 0.18);
+    transform: translateX(-2px);
+}
+
+.surtitre {
+    margin: 0 0 4px;
+    color: #a06cff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.entete-reglement h1 {
+    margin: 0;
+    font-size: clamp(30px, 6vw, 42px);
+    line-height: 1.2;
+}
+
+.description {
+    max-width: 580px;
+    margin: 12px 0 0;
+    color: #aab3ca;
+}
+
+/* INTRODUCTION */
+
+.introduction {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    padding: 22px;
+    border: 1px solid rgba(160, 108, 255, 0.24);
+    border-radius: 18px;
+    background: rgba(126, 87, 194, 0.1);
+}
+
+.icone-introduction {
+    font-size: 28px;
+}
+
+.introduction h2 {
+    margin: 0 0 8px;
+    font-size: 19px;
+}
+
+.introduction p {
+    margin: 0;
+    color: #c3c9dc;
+}
+
+/* ARTICLES */
+
+.article-reglement {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 14px;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 18px;
+    background: rgba(17, 24, 48, 0.78);
+}
+
+.numero-article {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: rgba(160, 108, 255, 0.15);
+    color: #b99aff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.article-reglement h2 {
+    margin: 0 0 10px;
+    font-size: 19px;
+}
+
+.article-reglement p {
+    margin: 0 0 10px;
+    color: #c3c9dc;
+}
+
+.article-reglement p:last-child {
+    margin-bottom: 0;
+}
+
+.article-reglement ul {
+    margin: 10px 0 0;
+    padding-left: 21px;
+    color: #c3c9dc;
+}
+
+.article-reglement li {
+    margin-bottom: 7px;
+}
+
+.article-reglement li:last-child {
+    margin-bottom: 0;
+}
+
+.article-reglement li::marker {
+    color: #a06cff;
+}
+
+/* RAPPEL FINAL */
+
+.avertissement-reglement {
+    margin-top: 22px;
+    padding: 22px;
+    border-left: 3px solid #a06cff;
+    border-radius: 0 14px 14px 0;
+    background: rgba(160, 108, 255, 0.08);
+}
+
+.avertissement-reglement h2 {
+    margin: 0 0 8px;
+    font-size: 19px;
+}
+
+.avertissement-reglement p {
+    margin: 0;
+    color: #c3c9dc;
+}
+
+/* PIED DE PAGE */
+
+.pied-reglement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 28px;
+    text-align: center;
+}
+
+.bouton-retour-inscription {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7951e8, #a06cff);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.bouton-retour-inscription:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+.lien-parametres {
+    color: #b99aff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.lien-parametres:hover {
+    text-decoration: underline;
+}
+
+.pied-reglement p {
+    margin: 8px 0 0;
+    color: #77819e;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 520px) {
+    .page-reglement {
+        padding: 20px 14px 35px;
+    }
+
+    .entete-reglement {
+        gap: 12px;
+    }
+
+    .bouton-retour {
+        width: 40px;
+        height: 40px;
+    }
+
+    .introduction,
+    .article-reglement {
+        gap: 12px;
+        padding: 17px;
+        border-radius: 15px;
+    }
+
+    .numero-article {
+        width: 35px;
+        height: 35px;
+        border-radius: 10px;
+        font-size: 12px;
+    }
+
+    .introduction h2,
+    .article-reglement h2,
+    .avertissement-reglement h2 {
+        font-size: 17px;
+    }
+
+    .article-reglement ul {
+        padding-left: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}

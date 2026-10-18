@@ -30,11 +30,16 @@ formulaireConnexion.addEventListener("submit", function(event) {
         return;
     }
 
-    // Enregistrement de l'utilisateur connecté
-    localStorage.setItem(
-        "potinLyceenUtilisateur",
-        JSON.stringify(compte)
-    );
+ // Enregistrement de l'utilisateur connecté
+// en conservant les informations du compte
+const utilisateurConnecte = {
+    ...compte
+};
+
+localStorage.setItem(
+    "potinLyceenUtilisateur",
+    JSON.stringify(utilisateurConnecte)
+);
 
     alert("👋 Bienvenue " + compte.prenom + " !");
 
